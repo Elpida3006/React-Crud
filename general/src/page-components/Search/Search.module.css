@@ -1,0 +1,28 @@
+.Header__Search {
+  margin-bottom: 30px;
+  text-align: center;
+}
+h1 {
+  text-align: center;
+}
+.Header__Input {
+  color: #8f8a8a;
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+.Header__btn {
+  height: 38px;
+  color: #008000;
+  border-color: #008000;
+  border-radius: 5px;
+  cursor:pointer;
+  font-size: 14px;
+  padding: 10px 7px;
+  width: 77px;
+}
+.Search__Container {
+  padding: 10px 60px;
+}

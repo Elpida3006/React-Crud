@@ -1,0 +1,40 @@
+.MovieCard {
+    margin-right: 50px;
+    margin-bottom: 50px;
+    display: flex;
+}
+.Product-Img {
+    
+    background-color: grey;
+    width: 330px;
+    height: 240px;
+}
+.Product-Title {
+    text-align: left;
+    text-decoration: none;
+    color: black;
+}
+.Product-Desciption {
+    font-size: 14px;
+}
+.Product-Content {
+    padding: 0 0 0 40px;
+    /* width: 70%; */
+}
+.Btn-remove {
+    color: #b40e0e;
+    border: 1px solid #b40e0e;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 7px;
+    width: 170px;
+}
+.Btn-add {
+    color: #2d6d5f;
+    border: 1px solid #2d6d5f;
+    border-radius: 5px;
+    font-size: 14px;
+    padding: 10px 7px;
+    width: 170px;
+
+}

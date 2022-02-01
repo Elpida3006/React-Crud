@@ -1,0 +1,11 @@
+.Favorites {
+    padding: 50px 5%;
+}
+.Favorites__Title {
+    text-align: center;
+}
+.Container{
+    display: flex;
+    padding: 1% 0;
+    flex-wrap: wrap;
+}

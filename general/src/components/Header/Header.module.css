@@ -1,0 +1,35 @@
+.Header {
+  background-color: rgb(248, 244, 244);
+  padding: 20px 50px;
+}
+.Container {
+  font-size: 24px;
+  display: flex;
+  justify-content: space-between;
+}
+.Header__Title {
+  color: #1b1b1b;
+  text-decoration: none;
+  cursor:pointer;
+}
+.Header__Search {
+  /* max-width: 300px; */
+}
+.Header__Input {
+  color: #8f8a8a;
+  width: 250px;
+  margin-right: 20px;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 14px;
+}
+.Header__btn {
+  height: 38px;
+  color: #008000;
+  border-color: #008000;
+  border-radius: 5px;
+  cursor:pointer;
+  font-size: 14px;
+  padding: 10px 7px;
+  width: 77px;
+}
