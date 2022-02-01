@@ -4,18 +4,19 @@ import { Link } from "react-router-dom";
 function FavoriteCard({
   _id: id,
   imageUrl,
-  nameProduct,
+  title,
   shortDescription,
   description,
   siteLink,
   likeRate,
-  comments,
+  favorite
+
 }) {
   return (
   
       <Link to={`/movies/movie-title/${id}`}>
         <div className={style["FavoriteCard"]}>
-
+<h5 className="" name="title">{title}</h5>
         <img
           src={imageUrl}
           className={style["Product-Img"]}

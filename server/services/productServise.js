@@ -15,7 +15,7 @@ function addFavorite(movieId) {
 function removeFavorite(movieId) {
   console.log(movieId);
   console.log(`its a fetch ${movieId}`);
-  return Movie.deleteOne({ _id: movieId }, { $pull: { favorite: movieId } });
+  return Movie.updateOne({ _id: movieId }, { $pull: { favorite: movieId } });
 }
 function getId(id) {
   console.log(id);

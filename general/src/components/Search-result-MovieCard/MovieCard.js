@@ -1,6 +1,8 @@
 import style from "./MovieCard.module.css";
 import { Link } from "react-router-dom";
 import * as service from '../../services/productService';
+import { useEffect, useState } from "react";
+
 
 function MovieCard({
   history,
@@ -13,12 +15,19 @@ function MovieCard({
   likeRate,
   favorite,
 }) {
+  const [product, setproduct] = useState({});
+
+  useEffect(() => {
+    service.getDetails(id).then((productsParams) => {
+      setproduct(productsParams);
+    });
+  }, []);
     const addFavorites = (id) => {
         service.addFavorite(id).then(() => {
              history.push('/');
         });
     };
-    const removeFavorites = (id) => {
+    const removeFavorites = (e, id) => {
         service.removeFavorite(id).then(() => {
              history.push('/');
         });
@@ -34,7 +43,7 @@ function MovieCard({
           type="text"
           name="imageUrl"
           alt=""
-          placeholder="Image url..."
+       
           
         />
          </Link>
@@ -51,14 +60,14 @@ function MovieCard({
         <Link
         //   className={style["Btn-remove"]}
           to={`/`} 
-          // onClick={addFavorites(id)} 
+          onClick={addFavorites(id)} 
              >
           <button className={style["Btn-add"]}>Add to Favorites</button>
           </Link>
         <Link
         //   className={style["Btn-remove"]}
           to={`/`}
-          // onClick={removeFavorites(id)}
+          onClick={removeFavorites(id)}
         >
           <button className={style["Btn-remove"]}>Remove From Favorites</button>
         </Link>

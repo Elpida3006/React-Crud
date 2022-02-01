@@ -13,16 +13,32 @@ function MovieTitle({ history }) {
       setproduct(productsParams);
     });
   }, []);
+let isFavorite = false;
+
+// console.log(product.favorite.length)
+const array = product.favorite
+// if(array.includes(id))
+// {
+//   isFavorite = true;
+//   console.log(isFavorite);
+// } else {
+  
+//   console.log('false')
+// }
+
+  
+
+
   const addFavorites = () => {
     service.addFavorite(id).then(() => {
       history.push("/");
     });
   };
-  // const removeFavorites = () => {
-  //   service.removeFavorite(id).then(() => {
-  //     history.push("/");
-  //   });
-  // };
+  const removeFavorites = () => {
+    service.removeFavorite(id).then(() => {
+      history.push("/");
+    });
+  };
   return (
     <Link to={`/movies/movie-title/${id}`} className={style["Product-Title"]}>
       <div className={style["MovieCard"]}>
@@ -46,18 +62,18 @@ function MovieTitle({ history }) {
           </p>
           <Link
             //   className={style["Btn-add"]}
-            to={`/movies/addFavorite/${id}`}
+            to={`/`}
             onClick={addFavorites}
           >
             <button className={style["Btn-add"]}>Add to Favorites</button>
           </Link>
-          {/* <Link
+          <Link
         //   className={style["Btn-remove"]}
-          to={`/movies/removeFavorite/${match.params.id}`}
+          to={`/`}
           onClick={removeFavorites}
         >
           <button className={style["Btn-remove"]}>Remove From Favorites</button>
-        </Link> */}
+        </Link>
         </div>
       </div>
     </Link>
