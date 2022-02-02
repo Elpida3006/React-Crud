@@ -1,10 +1,12 @@
 const Movie = require("../models/Movie");
 
 function getAll() {
-  return Movie.find().populate("favorites");
+  return Movie.find().populate("favorite");
 }
 function getFavorites() {
-  return Movie.find().populate("favorites");
+  const favorites = Movie.$where('this.favorite !== -1').populate("favorite");
+  // console.log(favorites);
+  return favorites;
 }
 
 function addFavorite(movieId) {
@@ -22,8 +24,8 @@ function getId(id) {
   return Movie.findById({ _id: id });
 }
 function createProduct(data) {
-console.log(data);
-return Movie.create({...data})
+  console.log(data);
+  return Movie.create({ ...data })
 
 }
 module.exports = {

@@ -16,7 +16,6 @@ function FavoriteCard({
   
       <Link to={`/movies/movie-title/${id}`}>
         <div className={style["FavoriteCard"]}>
-<h5 className="" name="title">{title}</h5>
         <img
           src={imageUrl}
           className={style["Product-Img"]}

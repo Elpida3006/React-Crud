@@ -18,9 +18,6 @@ export const getDetails = (productId) => {
 };
 
 export const addFavorite = (productId) => {
-    // console.log(`${homeurl}/edit/${productId}`);
-    // console.log(userId);
-
     return fetch(`${homeurl}/addFavorite/${productId}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
@@ -30,13 +27,12 @@ export const addFavorite = (productId) => {
         .catch(error => console.log(error));
 };
 export const removeFavorite = (productId) => {
-    // console.log(`${homeurl}/edit/${productId}`);
-    // console.log(userId);
+
     return fetch(`${homeurl}/removeFavorite/${productId}`, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'},
         credentials: 'include',
-        // body: JSON.stringify({userId})
+    
     })
         .then(res => res.json())
         .catch(error => console.log(error));

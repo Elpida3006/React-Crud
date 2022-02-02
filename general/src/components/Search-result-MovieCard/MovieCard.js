@@ -63,14 +63,14 @@ function MovieCard({
         <Link
         //   className={style["Btn-remove"]}
           to={`/`} 
-          onClick={addFavorites(id)} 
+          onClick={addFavorites} 
              >
           <button className={style["Btn-add"]}>Add to Favorites</button>
           </Link>
         <Link
         //   className={style["Btn-remove"]}
           to={`/`}
-          onClick={removeFavorites(id)}
+          onClick={removeFavorites}
         >
           <button className={style["Btn-remove"]}>Remove From Favorites</button>
         </Link>
