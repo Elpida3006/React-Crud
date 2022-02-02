@@ -25,12 +25,15 @@ function MovieCard({
     const addFavorites = (id) => {
         service.addFavorite(id).then(() => {
              history.push('/');
-        });
+        })
+        .catch(e => console.error(e))
     };
     const removeFavorites = (e, id) => {
         service.removeFavorite(id).then(() => {
              history.push('/');
-        });
+        })
+        .catch(e => console.error(e))
+
     };
 
     
