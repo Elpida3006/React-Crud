@@ -16,3 +16,6 @@ h1 {
   font-weight: 700;
   font-size: 24px;
 }
+.rc-rate {
+  font-size: 48px !important;
+}

@@ -4,10 +4,14 @@ import "./index.css";
 import AllMovies from "./AllMovies";
 import reportWebVitals from "./reportWebVitals";
 import Navigation from "./navigation";
+import Rate from 'rc-rate';
+import "rc-rate/assets/index.css";
 
 ReactDOM.render(
   <React.StrictMode>
     <Navigation>
+    <Rate />
+   
       <AllMovies />
     </Navigation>
   </React.StrictMode>,

@@ -2,6 +2,8 @@ import style from "./MovieTitle.module.css";
 import { Link, useParams } from "react-router-dom";
 import * as service from "../../services/productService";
 import { useEffect, useState } from "react";
+import Rate from 'rc-rate';
+
 
 function MovieTitle({ history }) {
   const { id } = useParams();
@@ -13,20 +15,21 @@ function MovieTitle({ history }) {
       setproduct(productsParams);
     });
   }, []);
-let isFavorite = false;
+  let isFavorite = false;
 
-// console.log(product.favorite.length)
-const array = product.favorite
-// if(array.includes(id))
-// {
-//   isFavorite = true;
-//   console.log(isFavorite);
-// } else {
-  
-//   console.log('false')
-// }
+  // console.log(product.favorite.length)
+  const array = product.favorite
+  // if(array.includes(id))
+  // {
+  //   isFavorite = true;
+  //   console.log(isFavorite);
+  // } else {
 
-  
+  //   console.log('false')
+  // }
+
+
+
 
 
   const addFavorites = () => {
@@ -40,7 +43,8 @@ const array = product.favorite
     });
   };
   return (
-    <Link to={`/movies/movie-title/${id}`} className={style["Product-Title"]}>
+
+    <div className={style["Product-Title"]}>
       <div className={style["MovieCard"]}>
         <img
           src={product.imageUrl}
@@ -68,15 +72,25 @@ const array = product.favorite
             <button className={style["Btn-add"]}>Add to Favorites</button>
           </Link>
           <Link
-        //   className={style["Btn-remove"]}
-          to={`/`}
-          onClick={removeFavorites}
-        >
-          <button className={style["Btn-remove"]}>Remove From Favorites</button>
-        </Link>
+            //   className={style["Btn-remove"]}
+            to={`/`}
+            onClick={removeFavorites}
+          >
+            <button className={style["Btn-remove"]}>Remove From Favorites</button>
+          </Link>
         </div>
       </div>
-    </Link>
+      <div>
+        <h1 className={style["Review"]}>Your Review</h1>
+        <Rate />
+        <textarea className={style["Review__textarea"]} placeholder="Your private notes and comments about the movie...">
+        </textarea>
+      </div>
+    </div>
+
+
+
+
   );
 }
 export default MovieTitle;
